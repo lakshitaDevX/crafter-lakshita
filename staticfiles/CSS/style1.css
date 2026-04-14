@@ -1,0 +1,79 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #dea1a1, #7796c8, #f8cf9d);
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.content {
+  flex:1;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+.featured {
+  display: flex;
+  gap: 40px;
+  margin: 60px 100px;
+}
+
+.featured img {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: transform 0.4s;
+}
+
+.featured img:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Shapes */
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.left-note {
+  max-width: 420px;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* FADE IN ANIMATION */
+.fade-in {
+  animation: fadeUp 1.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
