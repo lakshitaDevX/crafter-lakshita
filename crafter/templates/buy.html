@@ -1,0 +1,24 @@
+{% load static%}
+<link rel="stylesheet" href="{% static 'CSS/style8.css '%}">
+<div class="container">
+    
+            <h1>Buy Your Product</h1>
+            <img src="{{ artwork.image.url }}">
+            <h2>{{ artwork.name }}</h2>
+            <p>Price : {{ artwork.price }}</p>
+            <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Your Name" name="name">
+            <input type="email" placeholder="Your Email" name="email">
+            <input type="tel" placeholder="Your Mobile Number" name="number">
+            <textarea placeholder="Your Address" rows="2" name="address" required></textarea>
+            <input type="text" placeholder="Your pin code" name="pin">
+            <input type="text" placeholder="Your city" name="city">
+            <input type="text" placeholder="Your State" name="state">
+            <div class="btn">
+            <button class="buy">Buy</button>
+            <a href="{% url 'artwork_list' %}" class="cancel">Cancel</a></div>
+    
+
+    </form>
+</div>

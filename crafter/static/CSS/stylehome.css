@@ -1,0 +1,240 @@
+.nav {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #333;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search input {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.search img {
+    height: 20px;
+    margin-left: 5px;
+}
+
+.search img:hover {
+    cursor: pointer;
+}
+
+
+.login {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #020203;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login:hover {
+    background: #b19ed2;
+}
+
+
+.footer {
+    margin-top: auto;
+    font-family: Arial, sans-serif;
+    padding: 5px 40px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+}
+
+.instalogo {
+    height: 24px;
+    margin-right: 6px;
+}
+
+.emoji {
+    animation: floatUp 6s ease-in-out infinite;
+    font-size: 45px;
+    bottom: -80px;
+    opacity: 0;
+    z-index: -1;
+
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+
+}
+
+
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-300px) scale(1) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(-700px) scale(1.2) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #f7f3f3, #7796c8);
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.content {
+    flex: 1;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.featured {
+    display: flex;
+    gap: 40px;
+    margin: 60px 100px;
+}
+
+.featured img {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s;
+}
+
+.featured img:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Shapes */
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.left-note {
+    max-width: 420px;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* FADE IN ANIMATION */
+.fade-in {
+    animation: fadeUp 1.4s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.flight{
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #020203;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.flight:hover {
+    background: #b19ed2;
+}
+span{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.9rem;
+}

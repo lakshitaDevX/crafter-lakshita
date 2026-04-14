@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block css %}
+<link rel="stylesheet" href="{% static 'CSS/style7.css '%}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="left">
+     
+
+ 
+    <div class="profile-image">
+        <img src="{% static 'IMG/default_profile.jpg' %}">
+    </div>
+
+  
+    <h2>
+        {{ request.user.username }}
+    </h2>
+
+   
+    <p>
+        {{ request.user.email }}
+    </p>
+
+  
+    <a href="#">
+        Update Profile
+    </a>
+
+    
+    <a href="{% url 'logout' %}">
+        Logout
+    </a>
+
+
+    </div>
+    <div class="right">
+    <h2>My Purchases</h2>
+
+ 
+    <div class="order-card">
+       {% for p in purchases %}
+
+        <div class="card">
+            <div class="card-left">
+             <img src="{{ p.artwork.image.url }}">
+            </div>
+            <div class="card-right">
+            <h4>{{ p.artwork.name }}</h4>
+            <p>Price: ₹{{p.price}}</p>
+            <p>Status: <span class="{{p.status|lower}}">{{p.status}}</span></p>
+            <p>Purchased on: {{ p.Purchased_at|date:"d M Y" }}</p>
+            </div>
+        </div>
+        {% empty %}
+        <p>No purchases yet</p>
+        {% endfor %}
+
+    </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block css %}
+<link rel="stylesheet" href="{% static 'CSS/style1.css '%}">
+{% endblock %}
+{% block content %}
+<div class="content fade-in">
+        <div class="left-note">
+            Welcome to a place where colors whisper, imagination blossoms,
+            and every creation is a quiet joy.
+        </div>
+        <div class="featured">
+            <img class="circle" src="{% static 'IMG/img32.jpg' %}">
+            <img class="circle" src="{% static 'IMG/img2.jpg' %}">
+            <img class="circle" src="{% static 'IMG/img31.jpg' %}">
+            <img class="circle" src="{% static 'IMG/img33.jpg' %}">
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

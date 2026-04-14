@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding:0;
+}
+body {
+  background: linear-gradient(135deg, #faebeb, #f5f2f2);
+}
+
+   
+
+
+.featured {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 60px 0;
+}
+
+.featured img {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: transform 0.4s;
+}
+
+.featured img:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+
+
+.mixed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.mixed-grid img {
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+}
+
+.gallery-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.2rem;
+  text-align: center;
+  margin: 40px 0;
+
+  color: #b58df1;
+
+  text-shadow:
+    0 0 5px #b58df1,
+    0 0 10px #c9a7ff,
+    0 0 20px #d9c2ff;
+}
+@keyframes glow {
+  0%   { text-shadow: 0 0 5px #b58df1; }
+  50%  { text-shadow: 0 0 25px #e0c8ff; }
+  100% { text-shadow: 0 0 5px #b58df1; }
+}
+
+.gallery-title {
+  animation: glow 2.5s ease-in-out infinite;
+}
+.fade-in {
+  animation: fadeUp 1.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

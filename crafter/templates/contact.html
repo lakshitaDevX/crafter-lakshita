@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block css %}
+<link rel="stylesheet" href="{% static 'CSS/style3.css '%}">
+{% endblock %}
+{% block content %}
+    <div class="contact">
+        <div class="left">
+            <h1>Contact Us</h1>
+            <p class="info">
+                <img src="{% static 'IMG/address.png' %}">
+                Creative Studio, Amritsar Punjab, India
+            </p>
+
+            <p class="info">
+                <img src="{% static 'IMG/email.png' %}">
+                crafter_lakshita@gmail.com
+            </p>
+
+            <p class="info">
+                <img src="{% static 'IMG/phone.png' %}">
+                +91 9355628820
+            </p>
+
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <script>
+                    alert("{{message}}");
+                </script>
+            {% endfor %}
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+        <div class="right">
+            <h1>Get in Touch</h1>
+            <p>For custom art, collaborations & creative inquiries</p>
+            <input type="text" placeholder="Your Name" name="name">
+            <input type="email" placeholder="Your Email" name="email">
+
+            <textarea placeholder="Your Message" rows="4" name="message" required></textarea>
+
+
+            <button>Send</button>
+
+        </div>
+    </form>
+    </div>
+{% endblock %}

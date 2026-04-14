@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Art Gallery</title>
+    {% block css %}{% endblock %}
+</head>
+
+<body>
+
+<div class="nav">
+    <img src="{% static 'IMG/logo.png' %}" class="logo">
+
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'artwork_list' %}">Buy Art</a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+    </ul>
+
+    <div class="search">
+        <input type="text" placeholder="Search artwork...">
+        <img src="{% static 'IMG/search.png' %}">
+    </div>
+
+    {% if user.is_authenticated %}
+        {% if user.is_staff %}
+            <a href="/admin/"><button class="login">Admin Panel</button></a>
+        {% else %}
+            <a href="{% url 'profile' %}"><button class="login">Profile</button></a>
+        {% endif %}
+    {% else %}
+        <a href="{% url 'login' %}"><button class="login">Login</button></a>
+    {% endif %}
+</div>
+
+{% block content %}
+{% endblock %}
+
+<div class="footer">
+    <ul class="footer-links">
+        <li>
+            <a href="https://www.instagram.com/crafter_lakshita_?utm_source=qr&igsh=MXd0cjVlM2Fjc3c1eg==" target="_blank">
+                <img src="{% static 'IMG/instalogo.png' %}" class="instalogo">
+                Follow us on Instagram
+            </a>
+        </li>
+        <span class="emoji">🎨</span>       
+       <span class="emoji">🖌️</span>            
+       <span class="emoji">😊</span>
+        
+
+        <li>
+            <p>© 2026 My Art Gallery. All rights reserved.</p>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

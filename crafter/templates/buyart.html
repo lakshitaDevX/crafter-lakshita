@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block css %}
+<link rel="stylesheet" href="{% static 'CSS/style4.css '%}">
+{% endblock %}
+{% block content %}
+  <h1 class="page-title">Buy Art</h1>
+  <p class="page-subtitle">Original handmade artworks</p>
+
+  <div class="art-grid">
+    {% for artwork in artworks %}
+    <div class="art-card">
+      <img src="{{ artwork.image.url }}">
+      <h3>{{ artwork.name }}</h3>
+      <p class="price">{{ artwork.price }}</p>
+      <a href="{% url 'buy' artwork.id %}"><button class="buy-btn">Buy Now</button></a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

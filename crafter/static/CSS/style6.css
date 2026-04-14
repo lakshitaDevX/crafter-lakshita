@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:linear-gradient(to right,rgb(166, 232, 239),rgb(248, 222, 162));
+}
+
+.sign {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255,255,255,0.3);
+}
+.sign h1{
+    font-size:2rem;
+    font-family: Arial, sans-serif;
+    margin:20px;
+}
+form{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+.sign form input{
+    width:80%;
+    padding:12px;
+    margin-bottom:20px;
+    border-radius:20px;
+    font-family: Arial, sans-serif;
+    outline: none;
+    border:1px solid rgb(110, 109, 109);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255,255,255,0.2);
+}
+.sign form button{
+    border:none;
+    border-radius:20px;
+    width:84%;
+    padding:10px;
+    background-color: black;
+    color:white;
+    margin-bottom: 20px;
+    font-size:1rem;
+}
+.sign button:hover {
+  transform:translateY(-3px);
+}
+.sign p{
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+}
+.sign .icon{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.sign .icon a{
+        color:black;
+        margin-left:15px;
+}
+
